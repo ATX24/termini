@@ -1,0 +1,17 @@
+[package]
+name = "termini"
+version = "0.1.0"
+edition = "2021"
+description = "Split your terminal into a neat grid of panes, and zoom into one."
+
+[[bin]]
+name = "termini"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+
+[profile.release]
+lto = true
+strip = true
+codegen-units = 1
